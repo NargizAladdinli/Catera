@@ -1,0 +1,20 @@
+@use '../../scss/mixin' as mixin;
+@use '../../scss/variable' as var;
+
+.bgImage{
+    @include mixin.img($wid:100%, $heit:480px);
+    @include mixin.ground($ground_pos:0% 100%,$ground_repet:no-repeat,$ground_size:cover);
+    @include mixin.position($position:relative,$z_index:1);
+    @include mixin.flex($j_content:center,$a_items:center);
+    &::before{
+        content: '';
+        @include mixin.position($position:absolute,$inset:0,$z_index:-1);
+        @include mixin.img($wid:100%,$heit:100%);
+        opacity: 0.4;
+        background: var.$e-global-color-secondary;
+    }
+    .titleText{
+        font-family: var(--ibarra);
+        @include mixin.text($f_weight:600,$colrs:#fff,$f_size:70px);
+    }
+}
