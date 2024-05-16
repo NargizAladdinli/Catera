@@ -7,7 +7,7 @@ body{
     background-color: #09574A;
     font-size: 14px;
     font-weight: 400;
-    color: #0000;
+    color: #000000;
 }
 ul{
     margin: 0;
@@ -15,5 +15,27 @@ ul{
     list-style-type: none;
 }
 input{
-    
+    outline: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    max-width: 450px;
+    margin: auto;
+    @media (min-width:576px) {
+        max-width: 540px;
+    }
+    @media (min-width:768px) {
+        max-width: 760px;
+    }
+    @media (min-width:992px) {
+        max-width: 960px;
+    }
+    @media (min-width:1200px) {
+        max-width: 1240px;
+    }
+    @media (min-width:1400px) {
+        max-width: 1320px;
+    }
 }

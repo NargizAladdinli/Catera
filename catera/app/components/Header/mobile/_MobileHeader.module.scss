@@ -1,0 +1,89 @@
+@use '../../../scss/mixin' as mixin;
+@use '../../../scss/variable' as var;
+
+.opacity{
+    @include mixin.position($position:fixed,$inset:0,$z_index:-1);
+    @include mixin.img($wid:100%,$heit:100%);
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.57);
+    transition: all .25s ease;
+}
+.mobileMenu{
+    @include mixin.position($position:absolute,$top:0,$left:-100%);
+    @include mixin.img($wid:300px,$heit:100vh);
+    font-family: var(--montserrat);
+    display: block;
+    transition: all .25s ease;
+    background: #ffffff;
+    padding: 30px;
+    overflow: auto;
+    @include mixin.breakpoint('large'){
+        display: none;
+    }
+    .mobileNav{
+        .logo{
+            @include mixin.img($wid: 95px, $heit: 45px, );
+            img{
+                @include mixin.img($wid: 100%, $heit: 100%, $o_fit: cover);
+            }
+        }
+        .mobileList{
+            li{
+                .mobileLink{
+                    @include mixin.text($f_size:14px,$colrs:var.$e-global-color-secondary,$f_weight:400);
+                    @include mixin.flex($j_content:space-between,$a_items:center);
+                    padding: 15px 0;
+                    border-bottom: 1px var.$e-global-color-border solid;
+                    transition: all .5s linear;
+                    &:hover{
+                        color: var.$e-global-color-primary;
+                    }
+                }
+                .mobileDownOpen{
+                    padding: 8px 15px;
+                    opacity: 1;
+                    visibility: visible;
+                    transition: all .25s ease;
+                    height: 160px;
+                    li{
+                        .downLink{
+                            padding: 8px 0;
+                            display: block;
+                            @include mixin.text($f_size:14px,$colrs:var.$e-global-color-secondary,$f_weight:400);
+                            transition: all .5s linear;
+                    &:hover{
+                        color: var.$e-global-color-primary;
+                    }
+                        }
+                    }
+                }
+                .mobileDownClose{
+                    padding: 0px 15px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .25s ease;
+                    height: 0;
+                    li{
+                        .downLink{
+                            padding: 8px 0;
+                            display: block;
+                            @include mixin.text($f_size:14px,$colrs:var.$e-global-color-secondary,$f_weight:400);
+                            transition: all .5s linear;
+                    &:hover{
+                        color: var.$e-global-color-primary;
+                    }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.openMenu{
+    left: 0;
+}
+.visibly{
+    opacity: 1;
+    visibility: visible;
+}
