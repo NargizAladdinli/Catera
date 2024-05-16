@@ -1,6 +1,6 @@
 import './scss/_global.scss'
 import Header from "./components/Header/Header";
-import { rocker, montserrat } from "@/font/font";
+import { rocker, montserrat, ibarra } from "@/font/font";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${rocker.variable} ${montserrat.variable}`}>
+      <body className={`${rocker.variable} ${montserrat.variable} ${ibarra.variable}`}>
         <Header/>
         {children}
       </body>
