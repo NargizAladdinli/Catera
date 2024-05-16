@@ -1,7 +1,6 @@
-import { Inter } from "next/font/google";
 import './scss/_global.scss'
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "./components/Header/Header";
+import { rocker, montserrat } from "@/font/font";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${rocker.variable} ${montserrat.variable}`}>
+        <Header/>
+        {children}
+      </body>
     </html>
   );
 }
