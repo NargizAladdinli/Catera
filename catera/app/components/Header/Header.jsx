@@ -90,7 +90,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li className={style.menuItem}>
-                    <Link className={style.menuTitle} href="/contact">
+                    <Link className={style.menuTitle} href="/contacts">
                       contact <PiStarFourFill />
                     </Link>
                   </li>
@@ -111,7 +111,7 @@ const Header = () => {
           </div>
           <div className={style.contact}>
             <div className={style.contactItem}>
-              <Link className={style.contactList} href="/contact">
+              <Link className={style.contactList} href="/contacts">
                 <div className={style.icon}>
                   <span>
                     <GiRotaryPhone /> 055-555-55-55

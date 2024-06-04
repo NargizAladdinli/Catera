@@ -1,0 +1,35 @@
+@use '../../scss/mixin' as mixin;
+@use '../../scss/variable' as var; 
+
+.contact{
+    background: var.$e-global-color-line;
+    position: relative;
+    .cards{
+        @include mixin.flex($wrap:wrap,);
+        .card{
+            width: 100%;
+            padding: 10px;
+            @include mixin.breakpoint('large'){
+                width: 50%;
+            }
+        }
+    }
+    .imagePos{
+        display: none;
+        @include mixin.breakpoint('large'){
+            display: block
+        };
+        @include mixin.position($position:absolute,$top:10%,$right:0px);
+        .image{
+            width: 420px;
+            height: 100%;
+            opacity: 0.3;
+            @include mixin.breakpoint('wide'){
+                opacity: 1;
+            }
+            img{
+                @include mixin.img($wid:100%,$heit:100%,$o_fit:cover);
+            }
+        }
+    }
+}

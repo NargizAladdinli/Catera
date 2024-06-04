@@ -1,0 +1,44 @@
+@use '../../scss/mixin' as mixin;
+@use '../../scss/variable' as var;
+
+.answerQuestion{
+    background: #fff;
+    font-family: var(--ibarra);
+    padding-top: 50px;
+    .cards{
+        @include mixin.flex($a_items:center,$wrap:wrap,$j_content:center);
+        .first{
+            width: 100%;
+            @include mixin.breakpoint('large'){
+                width: 60%;
+            }
+        }
+        .card{
+            .cardItem{
+                text-align: center;
+                @include mixin.breakpoint('large'){
+                    text-align: start;
+                }
+                h3{
+                    @include mixin.text($f_size:35px,$l_heit:40px,$f_weight:600,$colrs:var.$e-global-color-primary);
+                    @include mixin.breakpoint('large'){
+                        font-size: 50px;
+                        line-height: 54px;
+                    }
+                }
+                p{
+                    @include mixin.text($f_size:16px,$f_weight:400,$colrs:var.$e-global-color-text);
+                    font-family: var(--montserrat);
+                    margin-top: 10px;
+                }
+            }
+            .cartImg{
+                transform: translateY(4px);
+                @include mixin.img($wid:100%,$heit:auto);
+                img{
+                @include mixin.img($wid:100%,$heit:auto,$o_fit:cover);
+                }
+            }
+        }
+    }
+}

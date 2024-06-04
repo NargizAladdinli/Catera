@@ -10,7 +10,7 @@
     transition: all .25s ease;
 }
 .mobileMenu{
-    @include mixin.position($position:absolute,$top:0,$left:-100%);
+    @include mixin.position($position:absolute,$top:0,$left:-100%,$z_index:11);
     @include mixin.img($wid:300px,$heit:100vh);
     font-family: var(--montserrat);
     display: block;
