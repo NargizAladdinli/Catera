@@ -69,7 +69,7 @@
                                 }
                             }
                             .dropdown{
-                            @include mixin.position($position:absolute,$top:60px,$left:0);
+                            @include mixin.position($position:absolute,$top:60px,$left:0,$z_index:2);
                             min-width: 240px;
                             padding: 24px 41px 30px;
                             @include mixin.text($ground:#fff,$radius:20px);
@@ -131,7 +131,7 @@
                 }
             }
             .langDrop{
-                @include mixin.position($position:absolute,$top:50px,$left:-25px);
+                @include mixin.position($position:absolute,$top:50px,$left:-25px,$z_index:2);
                 padding: 15px 30px;
                 @include mixin.text($ground:#fff,$radius:20px);
                 opacity: 0;

@@ -3,7 +3,7 @@
 
 .bgImage{
     @include mixin.img($wid:100%, $heit:480px);
-    @include mixin.ground($ground_pos:0% 100%,$ground_repet:no-repeat,$ground_size:cover);
+    @include mixin.ground($ground_pos:0% 100%,$ground_repet:no-repeat,$ground_size:cover,$ground_attachment:fixed);
     @include mixin.position($position:relative,$z_index:1);
     @include mixin.flex($j_content:center,$a_items:center);
     &::before{

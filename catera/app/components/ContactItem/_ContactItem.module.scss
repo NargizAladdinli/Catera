@@ -1,0 +1,51 @@
+@use '../../scss/mixin' as mixin;
+@use '../../scss/variable' as var;
+
+.info{
+    padding: 0px 70px;
+    position: relative;
+    z-index: 2;
+    @include mixin.breakpoint('large'){
+        padding: 30px 70px;
+    }
+    h3{
+        font-family: var(--ibarra);
+        @include mixin.text($f_size: 40px, $f_weight: 700, $colrs: var.$e-global-color-primary);
+    }
+    .infoTitel{
+        padding-top: 30px;
+        a{
+            &:hover{
+                .infoFlex{
+                    .icon{
+                        background: var.$e-global-color-accent;
+                        color: #fff;
+                    }
+                }
+            }
+            .infoFlex{
+                @include mixin.flex($gap:20px,$a_items:center);
+                margin-bottom: 30px;
+                .icon{
+                    @include mixin.img($wid:50px,$heit:50px);
+                    @include mixin.text($ground:#fff,$colrs:var.$e-global-color-accent,$radius:50%);
+                    @include mixin.flex($a_items:center,$j_content:center);
+                    svg{
+                        font-size: 25px;
+                    }
+                    transition: all .3s ease-in-out;
+                }
+                .text{
+                    font-family: var(--montserrat);
+                    h5{
+                        @include mixin.text($colrs:var.$e-global-color-secondary,$f_size:14px,$f_weight:600);
+                        margin-bottom: 9px;
+                    }
+                    p{
+                        @include mixin.text($colrs:var.$e-global-color-text,$f_size:16px,$f_weight:400,$l_heit:28px);
+                    }
+                }
+            }
+        }
+    }
+}

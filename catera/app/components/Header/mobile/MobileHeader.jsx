@@ -91,7 +91,7 @@ const MobileHeader = ({ active, setActive }) => {
               </Link>
             </li>
             <li>
-              <Link href="#" className={style.mobileLink}>
+              <Link href="/contacts" className={style.mobileLink}>
                 Contact
               </Link>
             </li>
