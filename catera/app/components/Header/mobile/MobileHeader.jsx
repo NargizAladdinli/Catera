@@ -34,7 +34,7 @@ const MobileHeader = ({ active, setActive }) => {
               </Link>
             </li>
             <li>
-              <Link href="#" className={style.mobileLink}>
+              <Link href="/about" className={style.mobileLink}>
                 About
               </Link>
             </li>

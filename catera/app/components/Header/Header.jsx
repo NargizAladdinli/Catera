@@ -33,7 +33,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li className={style.menuItem}>
-                    <Link className={style.menuTitle} href="#">
+                    <Link className={style.menuTitle} href="/about">
                       about <PiStarFourFill />
                     </Link>
                   </li>
