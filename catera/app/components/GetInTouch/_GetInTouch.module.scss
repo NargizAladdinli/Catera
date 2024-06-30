@@ -1,0 +1,44 @@
+@use '../../scss/mixin' as mixin;
+@use '../../scss/variable' as var;
+
+.bgImage{
+    @include mixin.img($wid:100%,$heit:250px);
+    @include mixin.ground($ground_size:cover,$ground_pos:center,$ground_repet:no-repeat);
+    @include mixin.flex($a_items:center,$j_content:center);
+    @include mixin.position($position:relative,$z_index:1);
+    @include mixin.breakpoint('large'){
+        height: 540px;
+    }
+    &::before{
+        content: '';
+        @include mixin.position($position:absolute,$inset:0,$z_index:-1);
+        @include mixin.img($wid:100%,$heit:100%);
+        background-color: #000;
+        opacity: 0.6;
+    }
+    .title{
+        text-align: center;
+        p{
+            @include mixin.text($colrs:#fff,$f_size:15px,$f_weight:400);
+            font-family: var(--ibarra);
+            @include mixin.breakpoint('large'){
+                font-size: 50px;
+            }
+        }
+        h2{
+            @include mixin.text($f_size:30px,$colrs:#EBC6A400);
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: var.$e-global-color-accent;
+            @include mixin.breakpoint('large'){
+                font-size: 100px;
+            }
+            a{
+                transition: all 0.4s ease;
+                @include mixin.text($colrs:inherit);
+            }
+            &:hover{
+                color: var.$e-global-color-accent;
+            }
+        }
+    }
+}

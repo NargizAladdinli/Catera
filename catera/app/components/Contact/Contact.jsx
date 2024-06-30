@@ -2,7 +2,7 @@ import style from './_Contact.module.scss'
 import Formiks from '../Formiks/Formiks'
 import ContactItem from '../ContactItem/ContactItem'
 import Image from 'next/image'
-import vegetable from '../../../public/images/vegetable.png'
+// import vegetable from '../../../public/images/vegetable.png'
 
 const Contact = () => {
     return(
