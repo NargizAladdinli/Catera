@@ -1,0 +1,125 @@
+@use '../../scss/mixin' as mixin;
+@use '../../scss/variable' as var;
+
+
+.events {
+    background-color: var.$e-global-color-line;
+    padding: 50px 0;
+    .title {
+        text-align: center;
+        padding-bottom: 30px;
+        @include mixin.breakpoint('medium'){
+            padding-bottom: 60px;
+        }
+        p {
+            svg {
+                color: var.$e-global-color-accent;
+                @include mixin.img($wid: 24px, $heit: 24px);
+                vertical-align: middle;
+            }
+            .left {
+                transform: rotate(270deg);
+                margin-right: 27px;
+            }
+            .right {
+                transform: rotate(0deg);
+                margin-left: 27px;
+            }
+            font-family: var(--montserrat);
+            @include mixin.text($f_weight: 600, $f_size: 12px, $colrs: var.$e-global-color-primary);
+        }
+        h2 {
+            @include mixin.text($f_weight: 600, $f_size: 50px, $colrs: var.$e-global-color-primary);
+            font-family: var(--ibarra);
+            @include mixin.breakpoint('medium'){
+                font-size: 100px;
+            };
+        }
+    }
+    .titleSecond {
+        @include mixin.text($t_align: center, $f_size: 22px, $f_weight: 400, $l_heit: 1.636em, $colrs: var.$e-global-color-text);
+        font-family: var(--montserrat);
+        width: 100%;
+        margin: auto;
+        padding-bottom: 70px;
+        @include mixin.breakpoint('medium'){
+            width: 63%;
+        };
+    }
+    .cards {
+        @include mixin.flex($wrap: wrap);
+        .card {
+            width: 100%;
+            padding: 10px;
+            @include mixin.breakpoint('large'){
+                width: 50%;
+            }
+            .card_item {
+                @include mixin.ground($ground_size: cover, $ground_pos: center, $ground_repet: no-repeat);
+                @include mixin.img($wid: 100%, $heit: 100%);
+                @include mixin.position($position: relative, $z_index: 0);
+                @include mixin.flex($j_content: center, $a_items: center, $f_direction: column);
+                border-radius: 20px;
+                padding: 60px;
+                &::before {
+                    content: '';
+                    @include mixin.position($position: absolute, $inset: 0, $z_index: -1);
+                    @include mixin.img($wid: 100%, $heit: 100%);
+                    @include mixin.text($ground: #000, $radius: 20px);
+                    opacity: 0.5;
+                }
+                .context {
+                    padding-bottom: 35px;
+                    h2 {
+                        @include mixin.text($f_size: 50px, $f_weight: 400, $colrs: #fff, $l_heit: 1);
+                        font-family: var(--ibarra);
+                    }
+                }
+                .image{
+                    width: 100%;
+                    height: auto;
+                    margin: auto;
+                   img{
+                     border-radius: 500px 500px 20px 20px;
+                     width: 100%;
+                     height: 100%;
+                     object-fit: cover;
+                   }
+                }
+                .link{
+                    margin-top: 50px;
+                    a{
+                        @include mixin.text($colrs:#fff,$f_size:12px,$f_weight:600,$ground:transparent);
+                        font-family: var(--montserrat);
+                        @include mixin.position($position:relative,$z_index:1);
+                        svg{
+                            vertical-align: -1px;
+                        }
+                        &::before{
+                            content: "";
+                            @include mixin.position($position:absolute,$top:-17px,$left:-17px,$z_index:-1);
+                            @include mixin.text($radius:28px,$ground:#EBC6A4);
+                            @include mixin.img($wid:50px,$heit:50px);
+                            transition: all .4s ease;
+                        }
+                        &:hover{
+                            color: #000;
+                            &::before{
+                                width: 130%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .card:nth-child(2n+2){
+            .card_item{
+                .image{
+                    img{
+                     border-radius: 20px 20px 500px 500px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@use '../../scss/mixin' as mixin;
+@use '../../scss/variable' as var;
+
+.call{
+    padding: 50px 0;
+    text-align: center;
+    font-family: var(--montserrat);
+    background-color: var.$e-global-color-line;
+    h4{
+        margin-bottom: 30px;
+        @include mixin.text($colrs:var.$e-global-color-secondary,$f_size:17px,$f_weight:400);
+        @include mixin.breakpoint('medium'){
+            font-size: 22px;
+        }
+    }
+    a{
+        padding: 1rem 1.875rem;
+        @include mixin.text($ground:var.$e-global-color-accent,$border:1px solid var.$e-global-color-accent,$radius:50px,$colrs:#fff,$f_size:12px,$f_weight:600);
+        transition: all 0.4s ease;
+        &:hover{
+            background: var.$e-global-color-primary;
+            border: 1px solid var.$e-global-color-primary;
+        }
+    }
+}

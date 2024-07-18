@@ -38,7 +38,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li className={style.menuItem}>
-                    <Link className={style.menuTitle} href="#">
+                    <Link className={style.menuTitle} href="/services">
                       services <PiStarFourFill />
                     </Link>
                     <ul className={style.dropdown}>

@@ -1,7 +1,7 @@
 import HowItWork from "./HowItWork";
 import style from "./_HowItWorks.module.scss";
 import { FaWheatAwn } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa";
+import Request from "../Request/Request";
 
 const HowItWorks = async ({ howItWorks, lang }) => {
   return (
@@ -27,10 +27,7 @@ const HowItWorks = async ({ howItWorks, lang }) => {
               })
             : "Melumat tapilmadi"}
         </div>
-        <div className={style.call}>
-          <h4>Call us now +1800 – 123 456 78 or request a quote without obligation.</h4>
-          <a href="#"> REQUEST A QUOTE NOW <FaArrowRight/></a>
-        </div>
+        <Request/>
       </div>
     </section>
   );

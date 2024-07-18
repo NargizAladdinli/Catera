@@ -39,7 +39,7 @@ const MobileHeader = ({ active, setActive }) => {
               </Link>
             </li>
             <li  onClick={toggle}>
-              <Link href="#" className={style.mobileLink}>
+              <Link href="/services" className={style.mobileLink}>
                 Services {open ? <LiaAngleDownSolid /> : <LiaAngleRightSolid/>}
               </Link>
               <ul className={`${open ? style.mobileDownOpen : style.mobileDownClose}`}>
