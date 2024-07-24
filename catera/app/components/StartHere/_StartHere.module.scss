@@ -1,0 +1,100 @@
+@use '../../scss/mixin' as mixin;
+@use '../../scss/variable' as var;
+
+.start{
+    @include mixin.flex($j_content:end);
+    .bgImage{
+        @include mixin.img($wid:100%,$heit:400px);
+        @include mixin.ground($ground_pos:bottom,$ground_size:cover);
+        @include mixin.position($position:relative,$z_index:1);
+        border-radius: 80px;
+        &::before{
+            content: '';
+            @include mixin.position($position:absolute,$inset:0,$z_index:-1);
+            @include mixin.img($wid:100%,$heit:100%);
+            @include mixin.text($radius:80px,$ground:var.$e-global-color-secondary);
+            opacity: 0.4;
+        }
+        @include mixin.breakpoint('large'){
+            width: 60%;
+            height: 727px;
+            border-radius: 0 0 0 80px;
+            &::before{
+                border-radius: 0 0 0 80px;
+            }
+        }
+        .content{
+            @include mixin.position($position:absolute,$left:11%,$top:12%);
+            text-align: center;
+            @include mixin.breakpoint('medium'){
+                left: 30%;
+            }
+            @include mixin.breakpoint('large'){
+                text-align: start;
+                left: -40%;
+            }
+            .animation{
+                position: relative;
+                &::before{
+                    content: '';
+                    @include mixin.position($position: absolute, $top: 41%, $left: 47%);
+                    @include mixin.text($ground: rgb(235, 198, 164), $colrs: rgb(255, 255, 255), $radius: 100px);
+                    @include mixin.img($wid: 18px, $heit: 18px);
+                }
+                @include mixin.breakpoint('large'){
+                    &::before{
+                        left: 6%;
+                    }
+                }
+                img{
+                    animation: rotate 20s linear infinite;
+                }
+            }
+            .text{
+                margin-top: 20px;
+                h1{
+                    font-family: var(--ibarra);
+                    @include mixin.text($colrs:rgb(255, 255, 255),$l_heit:11px,$f_size:32px,$f_weight:700);
+                    width: 100%;
+                    letter-spacing: 0px;
+                    @include mixin.breakpoint('large'){
+                        font-size: 111px;
+                        width: 800px;
+                        line-height: 111px;
+                    }
+                }
+                p{
+                    margin-top: 20px;
+                    @include mixin.text($f_size:17px,$f_weight:400,$colrs:rgb(255, 255, 255),$l_heit:22px,);
+                    font-family: (--montserrat);
+                }
+            }
+            .links{
+                margin-top: 20px;
+                a{
+                    @include mixin.text($ground:rgb(235, 198, 164),$t_transform:uppercase,$colrs:rgb(0, 0, 0),$l_heit:28px,$f_weight:600,$f_size:14px,$radius:500px);
+                    display: inline-block;
+                    font-family: (--montserrat);
+                    padding: 22px 60px;
+                    transition: all .4s ease;
+                    &:hover{
+                        background: rgb(255, 255, 255);
+                    }
+                    svg{
+                        margin-left: 10px;
+                        vertical-align: -2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

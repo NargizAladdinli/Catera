@@ -44,7 +44,7 @@ const MobileHeader = ({ active, setActive }) => {
               </Link>
               <ul className={`${open ? style.mobileDownOpen : style.mobileDownClose}`}>
                 <li>
-                  <Link className={style.downLink} href="#">
+                  <Link className={style.downLink} href="/services">
                     All Events
                   </Link>
                 </li>

@@ -43,7 +43,7 @@ const Header = () => {
                     </Link>
                     <ul className={style.dropdown}>
                       <li>
-                        <Link className={style.dropLink} href="#">
+                        <Link className={style.dropLink} href="/services">
                           All Events
                         </Link>
                       </li>

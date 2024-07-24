@@ -1,0 +1,74 @@
+@use '../../scss/mixin' as mixin;
+@use '../../scss/variable' as var;
+
+.sliders{
+    background: var.$e-global-color-line;
+    @include mixin.position($position:relative,$z_index:-1);
+    @include mixin.breakpoint('wide'){
+        z-index: 0;
+    }
+    .bla{
+        @include mixin.position($position:absolute,$bottom:-55%,$left:-10%,$z_index:1);
+        display: none;
+        @include mixin.breakpoint('wide'){
+            display: block;
+        }
+    }
+    .cards{
+        @include mixin.flex($wrap:wrap);
+        .iters{
+            @include mixin.text($ground:var.$e-global-color-primary,$radius:0 0 80px 0);
+            padding: 60px;
+            width: 100%;
+            @include mixin.ground($ground_pos:bottom center,$ground_repet:no-repeat);
+            @include mixin.breakpoint('large'){
+                padding: 100px;
+                width: 60%;
+            }
+            @include mixin.breakpoint('wide'){
+                padding: 175px
+            }
+            .numbers{
+                @include mixin.flex($j_content:center);
+                position: relative;
+                .postion{
+                    @include mixin.position($position:absolute,$top:11%,$left:-34%);
+                    display: none;
+                    @include mixin.breakpoint('large'){
+                        display: block;
+                    }
+                }
+                .number{
+                    padding: 10px;
+                    .items{
+                       .countup{
+                        @include mixin.text($f_size:100px,$f_weight:400,$colrs:var.$e-global-color-accent);
+                        font-family: var(--ibarra);
+                       } 
+                       .first{
+                        @include mixin.text($f_size:24px,$f_weight:400,$colrs:var.$e-global-color-accent);
+                        margin: 7px 0 9px 0;
+                        font-family: var(--ibarra);
+                       }
+                       .second{
+                        @include mixin.text($f_size:16px,$f_weight:400,$colrs:#fff);
+                        font-family: var(--montserrat);
+                       }
+                    }
+                }
+            }
+        }
+        .animation{
+            width: 40%;
+        }
+    }
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
